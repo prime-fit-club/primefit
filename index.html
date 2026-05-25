@@ -1,338 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PrimeFit</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>PrimeFit</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND GLOW */
+
+body::before{
+content:'';
+position:fixed;
+top:-200px;
+right:-150px;
+width:500px;
+height:500px;
+background:#009dff25;
+filter:blur(130px);
+border-radius:50%;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+bottom:-250px;
+left:-150px;
+width:500px;
+height:500px;
+background:#004cff20;
+filter:blur(130px);
+border-radius:50%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(5,8,22,.72);
+backdrop-filter:blur(14px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+font-size:34px;
+font-weight:800;
+color:#39bcff;
+text-shadow:0 0 20px #009dff;
+}
+
+nav{
+display:flex;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+color:#d8e7ff;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#39bcff;
+}
+
+#languageSwitcher{
+padding:12px 16px;
+border-radius:16px;
+border:1px solid rgba(57,188,255,.4);
+background:#091120;
+color:white;
+outline:none;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:140px 7% 80px;
+gap:60px;
+}
+
+.hero-content{
+flex:1;
+max-width:650px;
+}
+
+.hero-content h1{
+font-size:78px;
+line-height:1;
+font-weight:800;
+margin-bottom:28px;
+text-transform:uppercase;
+}
+
+.hero-content h1 span{
+color:#39bcff;
+text-shadow:0 0 20px #008cff;
+}
+
+.hero-content p{
+font-size:20px;
+line-height:1.8;
+color:#c3d5ec;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:18px 38px;
+border:none;
+border-radius:60px;
+background:linear-gradient(90deg,#0077ff,#00bfff);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 0 35px rgba(0,153,255,.4);
+}
+
+.hero-btn:hover{
+transform:translateY(-4px) scale(1.05);
+}
+
+.secondary-btn{
+background:transparent;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:550px;
+border-radius:40px;
+box-shadow:0 0 70px rgba(0,140,255,.18);
+}
+
+/* SECTION */
+
+section{
+padding:120px 7%;
+}
+
+.section-title{
+text-align:center;
+font-size:56px;
+font-weight:800;
+margin-bottom:60px;
+}
+
+/* MEMBERSHIP */
+
+.trainer-toggle{
+text-align:center;
+margin-bottom:50px;
+}
+
+.trainer-toggle h2{
+font-size:32px;
+margin-bottom:25px;
+}
+
+.toggle-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.toggle-buttons button{
+padding:16px 32px;
+background:#101b30;
+border:1px solid rgba(57,188,255,.3);
+color:white;
+border-radius:18px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.toggle-buttons button:hover{
+background:#008cff;
+}
+
+.toggle-buttons .active{
+background:#008cff;
+}
+
+.plans-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.plan-card{
+background:linear-gradient(180deg,#0b1325,#101d35);
+border-radius:32px;
+padding:38px;
+border:1px solid rgba(255,255,255,.06);
+transition:.4s;
+}
+
+.plan-card:hover{
+transform:translateY(-10px);
+border-color:#009dff;
+}
+
+.plan-card h3{
+font-size:34px;
+margin-bottom:12px;
+}
+
+.price{
+font-size:52px;
+font-weight:800;
+color:#39bcff;
+margin-bottom:22px;
+}
+
+.plan-card ul{
+list-style:none;
+}
+
+.plan-card li{
+margin-bottom:14px;
+color:#d5e6ff;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:170px;
+}
+
+.hero-content h1{
+font-size:52px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-content p{
+font-size:17px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.navbar{
+flex-direction:column;
+gap:20px;
+padding:18px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.plans-grid{
+grid-template-columns:1fr;
+}
+
+.hero-image img{
+max-width:100%;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">PrimeFit</div>
-
-    <nav>
-      <a href="#home" data-key="home">Home</a>
-      <a href="#plans" data-key="plans">Plans</a>
-      <a href="#gym" data-key="gym">Gym</a>
-      <a href="#spa" data-key="spa">Spa</a>
-      <a href="#contact" data-key="contact">Contact</a>
-    </nav>
-
-    <select id="languageSwitcher">
-      <option value="en">EN</option>
-      <option value="hy">HY</option>
-      <option value="ru">RU</option>
-    </select>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-      <h1 data-key="heroTitle">
-        BUILD YOUR STRONGEST VERSION
-      </h1>
-
-      <p data-key="heroText">
-        Premium fitness experience with elite equipment,
-        professional trainers, and modern recovery zones.
-      </p>
-
-      <button class="hero-btn" data-key="join">
-        Join PrimeFit
-      </button>
-    </div>
-  </section>
-
-  <!-- TRAINER TOGGLE -->
-  <section class="trainer-toggle">
-    <h2>Select Membership Type</h2>
-
-    <div class="toggle-buttons">
-      <button id="withoutTrainer" class="active">
-        Without Trainer
-      </button>
-
-      <button id="withTrainer">
-        With Trainer
-      </button>
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP -->
-  <section class="plans-section" id="plans">
-
-    <h2 class="section-title">
-      Membership Plans
-    </h2>
-
-    <div class="plans-grid">
-
-      <div class="plan-card">
-        <h3>Daily</h3>
-        <div class="price" data-base="10">
-          $10
-        </div>
-
-        <ul>
-          <li>Gym Access</li>
-          <li>Cardio Zone</li>
-          <li>Locker Access</li>
-        </ul>
-      </div>
-
-      <div class="plan-card">
-        <h3>Weekly</h3>
-        <div class="price" data-base="40">
-          $40
-        </div>
-
-        <ul>
-          <li>Unlimited Gym</li>
-          <li>Recovery Zone</li>
-          <li>Group Training</li>
-        </ul>
-      </div>
-
-      <div class="plan-card premium">
-        <h3>Monthly</h3>
-        <div class="price" data-base="90">
-          $90
-        </div>
-
-        <ul>
-          <li>Full Access</li>
-          <li>Premium Equipment</li>
-          <li>Body Tracking</li>
-        </ul>
-      </div>
-
-      <div class="plan-card">
-        <h3>Yearly</h3>
-        <div class="price" data-base="700">
-          $700
-        </div>
-
-        <ul>
-          <li>VIP Access</li>
-          <li>All Classes</li>
-          <li>Premium Support</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GYM -->
-  <section class="gym-section" id="gym">
-
-    <h2 class="section-title">
-      Explore Our Gym
-    </h2>
-
-    <div class="gym-gallery">
-
-      <div class="gym-card">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200">
-        <h3>Main Workout Zone</h3>
-      </div>
-
-      <div class="gym-card">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200">
-        <h3>Strength Training</h3>
-      </div>
-
-      <div class="gym-card">
-        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200">
-        <h3>Cardio Area</h3>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SPA -->
-  <section class="spa-section" id="spa">
-
-    <h2 class="section-title">
-      Recovery & Wellness
-    </h2>
-
-    <div class="spa-grid">
-
-      <div class="spa-card">
-        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200">
-        <h3>Swimming Pool</h3>
-        <p>$15 Extra Access</p>
-      </div>
-
-      <div class="spa-card">
-        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200">
-        <h3>Jacuzzi</h3>
-        <p>$20 Extra Access</p>
-      </div>
-
-      <div class="spa-card">
-        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200">
-        <h3>Sauna</h3>
-        <p>$25 Extra Access</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section class="instagram-section">
-
-    <h2>Follow Us On Instagram</h2>
-
-    <a href="https://instagram.com" target="_blank">
-      @PrimeFitClub
-    </a>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-
-    <h2 class="section-title">
-      Contact Us
-    </h2>
-
-    <form class="contact-form">
-
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Your Message"></textarea>
-
-      <button type="submit">
-        Send Message
-      </button>
-
-    </form>
-  </section>
-
-  <footer>
-    © 2026 PrimeFit Club. All rights reserved.
-  </footer>
-
-  <script src="script.js"></script>
-<script>
-
-/* TRAINER PRICE CHANGE */
-
-const trainerButtons =
-document.querySelectorAll('.toggle-buttons button');
-
-const prices =
-document.querySelectorAll('.price');
-
-const basePrices = [10,40,90,700];
-
-trainerButtons.forEach((btn,index)=>{
-
-btn.addEventListener('click',()=>{
-
-trainerButtons.forEach(button=>{
-button.style.background='#101d30';
-});
-
-btn.style.background='#008cff';
-
-prices.forEach((price,i)=>{
-
-let newPrice = basePrices[i];
-
-if(index === 1){
-newPrice += [15,30,60,300][i];
-}
-
-price.innerHTML = '$' + newPrice;
-
-});
-
-});
-
-});
-
-
-/* LANGUAGE SWITCH */
-
-const language =
-document.querySelector('.language-switch');
-
-language.addEventListener('change',()=>{
-
-const value = language.value;
-
-const heroTitle =
-document.querySelector('.hero h1');
-
-const heroText =
-document.querySelector('.hero p');
-
-const heroButton =
-document.querySelector('.hero-btn');
-
-const sectionTitle =
-document.querySelector('.section-title');
-
-if(value === 'HY'){
-
-heroTitle.innerHTML =
-'Կառուցիր Քո <span>Ամենաուժեղ</span> Տարբերակը';
-
-heroText.innerHTML =
-'Պրեմիում մարզասրահ նորագույն սարքավորումներով, մարզիչներով և վերականգնման գոտիներով։';
-
-heroButton.innerHTML =
-'Միացիր PrimeFit-ին';
-
-sectionTitle.innerHTML =
-'Անդամակցության Փաթեթներ';
-
-}
-
-else if(value === 'RU'){
-
-heroTitle.innerHTML =
-'Создай Свою <span>Сильнейшую</span> Версию';
-
-heroText.innerHTML =
-'Премиальный фитнес-клуб с современным оборудованием и профессиональными тренерами.';
-
-heroButton.innerHTML =
-'Присоединиться';
-
-sectionTitle.innerHTML =
-'Тарифные Планы';
-
-}
-
-else{
-
-heroTitle.innerHTML =
-'Build Your <span>Strongest</span> Version';
-
-heroText.innerHTML =
-'Premium futuristic gym experience with elite equipment, professional trainers and advanced recovery zones.';
-
-heroButton.innerHTML =
-'Join PrimeFit';
-
-sectionTitle.innerHTML =
-'Membership Plans';
-
-}
-
-});
-
-</script>
-</body>
-</html>
