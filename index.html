@@ -223,6 +223,116 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
 
+/* TRAINER PRICE CHANGE */
+
+const trainerButtons =
+document.querySelectorAll('.toggle-buttons button');
+
+const prices =
+document.querySelectorAll('.price');
+
+const basePrices = [10,40,90,700];
+
+trainerButtons.forEach((btn,index)=>{
+
+btn.addEventListener('click',()=>{
+
+trainerButtons.forEach(button=>{
+button.style.background='#101d30';
+});
+
+btn.style.background='#008cff';
+
+prices.forEach((price,i)=>{
+
+let newPrice = basePrices[i];
+
+if(index === 1){
+newPrice += [15,30,60,300][i];
+}
+
+price.innerHTML = '$' + newPrice;
+
+});
+
+});
+
+});
+
+
+/* LANGUAGE SWITCH */
+
+const language =
+document.querySelector('.language-switch');
+
+language.addEventListener('change',()=>{
+
+const value = language.value;
+
+const heroTitle =
+document.querySelector('.hero h1');
+
+const heroText =
+document.querySelector('.hero p');
+
+const heroButton =
+document.querySelector('.hero-btn');
+
+const sectionTitle =
+document.querySelector('.section-title');
+
+if(value === 'HY'){
+
+heroTitle.innerHTML =
+'Կառուցիր Քո <span>Ամենաուժեղ</span> Տարբերակը';
+
+heroText.innerHTML =
+'Պրեմիում մարզասրահ նորագույն սարքավորումներով, մարզիչներով և վերականգնման գոտիներով։';
+
+heroButton.innerHTML =
+'Միացիր PrimeFit-ին';
+
+sectionTitle.innerHTML =
+'Անդամակցության Փաթեթներ';
+
+}
+
+else if(value === 'RU'){
+
+heroTitle.innerHTML =
+'Создай Свою <span>Сильнейшую</span> Версию';
+
+heroText.innerHTML =
+'Премиальный фитнес-клуб с современным оборудованием и профессиональными тренерами.';
+
+heroButton.innerHTML =
+'Присоединиться';
+
+sectionTitle.innerHTML =
+'Тарифные Планы';
+
+}
+
+else{
+
+heroTitle.innerHTML =
+'Build Your <span>Strongest</span> Version';
+
+heroText.innerHTML =
+'Premium futuristic gym experience with elite equipment, professional trainers and advanced recovery zones.';
+
+heroButton.innerHTML =
+'Join PrimeFit';
+
+sectionTitle.innerHTML =
+'Membership Plans';
+
+}
+
+});
+
+</script>
 </body>
 </html>
