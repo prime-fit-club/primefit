@@ -222,26 +222,95 @@ color:#d2e6ff;
 @media(max-width:900px){
 
 .navbar{
+padding:18px 20px;
 flex-direction:column;
-gap:20px;
+gap:18px;
+}
+
+.logo{
+font-size:30px;
 }
 
 .nav-links{
 flex-wrap:wrap;
 justify-content:center;
+gap:18px;
+}
+
+.nav-links a{
+font-size:15px;
+}
+
+.hero{
+height:auto;
+padding-top:180px;
+padding-bottom:90px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:42px;
+line-height:1.15;
 }
 
 .hero p{
+font-size:16px;
+line-height:1.7;
+}
+
+.hero-btn{
+width:100%;
+max-width:280px;
+padding:16px;
 font-size:17px;
 }
 
-.section-title{
-font-size:38px;
+section{
+padding:80px 20px;
 }
+
+.section-title{
+font-size:34px;
+margin-bottom:40px;
+}
+
+.membership-grid{
+grid-template-columns:1fr;
+gap:22px;
+}
+
+.membership-card{
+padding:25px;
+border-radius:24px;
+}
+
+.membership-card h3{
+font-size:28px;
+}
+
+.price{
+font-size:40px;
+}
+
+.membership-card img{
+height:240px !important;
+object-fit:cover;
+}
+
+.toggle-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.toggle-buttons button{
+width:100%;
+max-width:280px;
+}
+
+input,
+textarea{
+font-size:16px;
+}
+
 }
 
 </style>
@@ -412,72 +481,6 @@ maximum endurance training.
 </section>
 
 
-<!-- POOL / JACUZZI / SAUNA -->
-
-<section>
-
-<h2 class="section-title">
-Recovery & Wellness
-</h2>
-
-<div class="membership-grid">
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200"
-style="width:100%;border-radius:20px;margin-bottom:20px;">
-
-<h3>Swimming Pool</h3>
-
-<div class="price">$15</div>
-
-<p style="color:#d2e6ff;">
-Premium indoor pool for
-recovery and swimming sessions.
-</p>
-
-</div>
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1200"
-style="width:100%;border-radius:20px;margin-bottom:20px;">
-
-<h3>Jacuzzi</h3>
-
-<div class="price">$20</div>
-
-<p style="color:#d2e6ff;">
-Luxury jacuzzi experience
-for body recovery.
-</p>
-
-</div>
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200"
-style="width:100%;border-radius:20px;margin-bottom:20px;">
-
-<h3>Sauna</h3>
-
-<div class="price">$25</div>
-
-<p style="color:#d2e6ff;">
-Relaxing sauna area included
-for premium members.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
 <!-- INSTAGRAM -->
 
 <section style="text-align:center;">
@@ -507,93 +510,85 @@ font-weight:700;
 
 <!-- CONTACT -->
 
-<section>
+<!-- CONTACT -->
+
+<section id="contact">
 
 <h2 class="section-title">
-Recovery & Wellness
+Contact Us
 </h2>
 
-<div class="membership-grid">
+<div style="
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+">
 
-<!-- SWIMMING POOL -->
+<input
+type="text"
+placeholder="Your Name"
+style="
+padding:20px;
+border-radius:18px;
+border:none;
+background:#101b2d;
+color:white;
+font-size:16px;
+outline:none;
+">
 
-<div class="membership-card">
+<input
+type="email"
+placeholder="Your Email"
+style="
+padding:20px;
+border-radius:18px;
+border:none;
+background:#101b2d;
+color:white;
+font-size:16px;
+outline:none;
+">
 
-<img
-src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200"
-style="width:100%;height:280px;object-fit:cover;border-radius:20px;margin-bottom:20px;">
+<textarea
+placeholder="Your Message"
+style="
+padding:20px;
+height:180px;
+border-radius:18px;
+border:none;
+background:#101b2d;
+color:white;
+font-size:16px;
+outline:none;
+resize:none;
+"></textarea>
 
-<h3>Swimming Pool</h3>
+<button class="hero-btn">
+Send Message
+</button>
 
-<div class="price">$15</div>
+<p style="
+text-align:center;
+color:#89b7ff;
+font-size:18px;
+margin-top:10px;
+">
 
-<p style="color:#d2e6ff;">
-Premium indoor swimming pool
-for recovery, cardio and relaxation.
+Email:
+<a
+href="mailto:primefit@email.com"
+style="
+color:#2fb9ff;
+text-decoration:none;
+font-weight:700;
+">
+primefit@email.com
+</a>
+
 </p>
-
-</div>
-
-
-<!-- JACUZZI -->
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200"
-style="width:100%;height:280px;object-fit:cover;border-radius:20px;margin-bottom:20px;">
-
-<h3>Jacuzzi</h3>
-
-<div class="price">$20</div>
-
-<p style="color:#d2e6ff;">
-Hydro massage jacuzzi with
-powerful underwater jets
-for muscle recovery.
-</p>
-
-</div>
-
-
-<!-- SAUNA -->
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200"
-style="width:100%;height:280px;object-fit:cover;border-radius:20px;margin-bottom:20px;">
-
-<h3>Sauna</h3>
-
-<div class="price">$25</div>
-
-<p style="color:#d2e6ff;">
-Premium steam sauna for
-deep relaxation and body recovery.
-</p>
-
-</div>
-
-
-<!-- MASSAGE -->
-
-<div class="membership-card">
-
-<img
-src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200"
-style="width:100%;height:280px;object-fit:cover;border-radius:20px;margin-bottom:20px;">
-
-<h3>Massage</h3>
-
-<div class="price">$30</div>
-
-<p style="color:#d2e6ff;">
-Professional recovery massage
-for muscle relaxation and wellness.
-</p>
-
-</div>
 
 </div>
 
