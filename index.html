@@ -221,29 +221,24 @@ color:#d2e6ff;
 
 @media(max-width:900px){
 
-.navbar{
-flex-direction:column;
-gap:20px;
-}
-
 .nav-links{
-flex-wrap:wrap;
-justify-content:center;
+gap:14px;
 }
 
-.hero h1{
-font-size:48px;
+.nav-links a{
+font-size:14px;
 }
 
-.hero p{
-font-size:17px;
+.hero{
+padding-top:140px;
 }
 
-.section-title{
-font-size:38px;
-}
+.hero-btn{
+width:100%;
+max-width:260px;
 }
 
+}
 </style>
 </head>
 <body>
@@ -580,8 +575,9 @@ const trainerButtons =
 document.querySelectorAll('.toggle-buttons button');
 
 const prices =
-document.querySelectorAll('.price');
-
+document.querySelectorAll(
+'.membership-card .price'
+);
 let trainerMode = false;
 
 trainerButtons.forEach((btn,index)=>{
@@ -704,12 +700,16 @@ if(top < window.innerHeight - 100){
 card.style.opacity='1';
 card.style.transform='translateY(0px)';
 
+}else{
+
+card.style.opacity='0';
+card.style.transform='translateY(70px)';
+
 }
 
 });
 
 });
-
 cards.forEach(card=>{
 
 card.style.opacity='0';
