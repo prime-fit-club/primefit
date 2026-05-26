@@ -621,146 +621,178 @@ price.innerHTML = '$' + newPrice;
 
 /* LANGUAGE SWITCH */
 
+/* FULL LANGUAGE SWITCH */
+
 const language =
 document.querySelector('.language-switch');
 
 language.addEventListener('change',()=>{
 
-const value = language.value;
+const lang = language.value;
 
 const navLinks =
 document.querySelectorAll('.nav-links a');
 
-const sectionTitles =
+const titles =
 document.querySelectorAll('.section-title');
 
-const trainerTitle =
+const heroTitle =
+document.querySelector('.hero h1');
+
+const heroText =
+document.querySelector('.hero p');
+
+const heroBtn =
+document.querySelector('.hero-btn');
+
+const membershipTitle =
 document.querySelector('.membership-toggle h3');
 
-if(value === 'HY'){
+const membershipButtons =
+document.querySelectorAll('.toggle-buttons button');
 
-navLinks[0].innerHTML='Գլխավոր';
-navLinks[1].innerHTML='Փաթեթներ';
-navLinks[2].innerHTML='Մարզասրահ';
-navLinks[3].innerHTML='ՍՊԱ';
-navLinks[4].innerHTML='Կապ';
+const membershipCards =
+document.querySelectorAll('.membership-card h3');
 
-document.querySelector('.hero h1')
-.innerHTML =
+const contactInputs =
+document.querySelectorAll('input, textarea');
+
+const footer =
+document.querySelector('footer');
+
+if(lang === 'HY'){
+
+navLinks[0].textContent='Գլխավոր';
+navLinks[1].textContent='Փաթեթներ';
+navLinks[2].textContent='Մարզասրահ';
+navLinks[3].textContent='ՍՊԱ';
+navLinks[4].textContent='Կապ';
+
+heroTitle.innerHTML =
 'Կառուցիր Քո <span>Ամենաուժեղ</span> Տարբերակը';
 
-document.querySelector('.hero p')
-.innerHTML =
+heroText.textContent =
 'Պրեմիում մարզասրահ՝ նորագույն սարքավորումներով, պրոֆեսիոնալ մարզիչներով և վերականգնման գոտիներով։';
 
-document.querySelector('.hero-btn')
-.innerHTML =
+heroBtn.textContent =
 'Միացիր PrimeFit-ին';
 
-sectionTitles[0].innerHTML =
+titles[0].textContent =
 'Անդամակցության Փաթեթներ';
 
-sectionTitles[1].innerHTML =
+titles[1].textContent =
 'Բացահայտիր Մարզասրահը';
 
-sectionTitles[2].innerHTML =
+titles[2].textContent =
 'Վերականգնում և Wellness';
 
-sectionTitles[3].innerHTML =
+titles[3].textContent =
 'Հետևիր PrimeFit-ին';
 
-sectionTitles[4].innerHTML =
+titles[4].textContent =
 'Կապ մեզ հետ';
 
-trainerTitle.innerHTML =
+membershipTitle.textContent =
 'Ընտրիր Փաթեթի Տեսակը';
+
+membershipButtons[0].textContent =
+'Առանց Մարզիչ';
+
+membershipButtons[1].textContent =
+'Մարզիչով';
+
+membershipCards[0].textContent='Օրական';
+membershipCards[1].textContent='Շաբաթական';
+membershipCards[2].textContent='Ամսական';
+membershipCards[3].textContent='Տարեկան';
+membershipCards[4].textContent='Հիմնական Գոտի';
+membershipCards[5].textContent='Ուժային Մարզումներ';
+membershipCards[6].textContent='Կարդիո Գոտի';
+membershipCards[7].textContent='Լողավազան';
+membershipCards[8].textContent='Ջակուզի';
+membershipCards[9].textContent='Սաունա';
+
+contactInputs[0].placeholder='Քո Անունը';
+contactInputs[1].placeholder='Քո Email-ը';
+contactInputs[2].placeholder='Քո Հաղորդագրությունը';
+
+footer.innerHTML =
+'© 2026 PrimeFit Club — Բոլոր իրավունքները պաշտպանված են';
 
 }
 
-else if(value === 'RU'){
+else if(lang === 'RU'){
 
-navLinks[0].innerHTML='Главная';
-navLinks[1].innerHTML='Тарифы';
-navLinks[2].innerHTML='Зал';
-navLinks[3].innerHTML='СПА';
-navLinks[4].innerHTML='Контакт';
+navLinks[0].textContent='Главная';
+navLinks[1].textContent='Тарифы';
+navLinks[2].textContent='Зал';
+navLinks[3].textContent='СПА';
+navLinks[4].textContent='Контакты';
 
-document.querySelector('.hero h1')
-.innerHTML =
+heroTitle.innerHTML =
 'Создай Свою <span>Сильнейшую</span> Версию';
 
-document.querySelector('.hero p')
-.innerHTML =
+heroText.textContent =
 'Премиальный фитнес-клуб с профессиональными тренерами и современным оборудованием.';
 
-document.querySelector('.hero-btn')
-.innerHTML =
+heroBtn.textContent =
 'Присоединиться';
 
-sectionTitles[0].innerHTML =
+titles[0].textContent =
 'Тарифные Планы';
 
-sectionTitles[1].innerHTML =
+titles[1].textContent =
 'Наш Тренажерный Зал';
 
-sectionTitles[2].innerHTML =
+titles[2].textContent =
 'Восстановление и Wellness';
 
-sectionTitles[3].innerHTML =
+titles[3].textContent =
 'Следите за PrimeFit';
 
-sectionTitles[4].innerHTML =
+titles[4].textContent =
 'Связаться с нами';
 
-trainerTitle.innerHTML =
+membershipTitle.textContent =
 'Выберите Тип Абонемента';
+
+membershipButtons[0].textContent =
+'Без Тренера';
+
+membershipButtons[1].textContent =
+'С Тренером';
+
+membershipCards[0].textContent='Дневной';
+membershipCards[1].textContent='Недельный';
+membershipCards[2].textContent='Месячный';
+membershipCards[3].textContent='Годовой';
+membershipCards[4].textContent='Главная Зона';
+membershipCards[5].textContent='Силовые Тренировки';
+membershipCards[6].textContent='Кардио Зона';
+membershipCards[7].textContent='Бассейн';
+membershipCards[8].textContent='Джакузи';
+membershipCards[9].textContent='Сауна';
+
+contactInputs[0].placeholder='Ваше Имя';
+contactInputs[1].placeholder='Ваш Email';
+contactInputs[2].placeholder='Ваше Сообщение';
+
+footer.innerHTML =
+'© 2026 PrimeFit Club — Все права защищены';
 
 }
 
 else{
 
-navLinks[0].innerHTML='Home';
-navLinks[1].innerHTML='Plans';
-navLinks[2].innerHTML='Gym';
-navLinks[3].innerHTML='Spa';
-navLinks[4].innerHTML='Contact';
-
-document.querySelector('.hero h1')
-.innerHTML =
-'Build Your <span>Strongest</span> Version';
-
-document.querySelector('.hero p')
-.innerHTML =
-'Premium futuristic gym experience with elite equipment, professional trainers and advanced recovery zones.';
-
-document.querySelector('.hero-btn')
-.innerHTML =
-'Join PrimeFit';
-
-sectionTitles[0].innerHTML =
-'Membership Plans';
-
-sectionTitles[1].innerHTML =
-'Explore Our Gym';
-
-sectionTitles[2].innerHTML =
-'Recovery & Wellness';
-
-sectionTitles[3].innerHTML =
-'Follow PrimeFit';
-
-sectionTitles[4].innerHTML =
-'Contact Us';
-
-trainerTitle.innerHTML =
-'Select Membership Type';
+location.reload();
 
 }
 
 });
 
 
+</script>
+
 </body>
 </html>
-
 
