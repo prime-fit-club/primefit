@@ -572,6 +572,125 @@ color:#98b4d8;
 © 2026 PrimeFit Club — All Rights Reserved
 
 </footer>
+</footer>
 
+<script>
+
+/* TRAINER PRICE CHANGE */
+
+const trainerButtons =
+document.querySelectorAll('.toggle-buttons button');
+
+const prices =
+document.querySelectorAll('.price');
+
+let trainerMode = false;
+
+trainerButtons.forEach((btn,index)=>{
+
+btn.addEventListener('click',()=>{
+
+trainerButtons.forEach(b=>{
+b.style.background='#101d30';
+});
+
+btn.style.background='#008cff';
+
+trainerMode = index === 1;
+
+const basePrices = [10,40,90,700];
+
+prices.forEach((price,i)=>{
+
+let newPrice = basePrices[i];
+
+if(trainerMode){
+newPrice += [15,30,60,300][i];
+}
+
+price.innerHTML = '$' + newPrice;
+
+});
+
+});
+
+});
+
+
+/* LANGUAGE SWITCH */
+
+const language =
+document.querySelector('.language-switch');
+
+language.addEventListener('change',()=>{
+
+const value = language.value;
+
+if(value === 'HY'){
+
+document.querySelector('.hero h1')
+.innerHTML =
+'Կառուցիր Քո <span>Ամենաուժեղ</span> Տարբերակը';
+
+document.querySelector('.hero p')
+.innerHTML =
+'Պրեմիում մարզասրահ՝ նորագույն սարքավորումներով, պրոֆեսիոնալ մարզիչներով և վերականգնման գոտիներով։';
+
+document.querySelector('.hero-btn')
+.innerHTML =
+'Միացիր PrimeFit-ին';
+
+document.querySelector('.section-title')
+.innerHTML =
+'Անդամակցության Փաթեթներ';
+
+}
+
+else if(value === 'RU'){
+
+document.querySelector('.hero h1')
+.innerHTML =
+'Создай Свою <span>Сильнейшую</span> Версию';
+
+document.querySelector('.hero p')
+.innerHTML =
+'Премиальный фитнес-клуб с профессиональными тренерами и современным оборудованием.';
+
+document.querySelector('.hero-btn')
+.innerHTML =
+'Присоединиться';
+
+document.querySelector('.section-title')
+.innerHTML =
+'Тарифные Планы';
+
+}
+
+else{
+
+document.querySelector('.hero h1')
+.innerHTML =
+'Build Your <span>Strongest</span> Version';
+
+document.querySelector('.hero p')
+.innerHTML =
+'Premium futuristic gym experience with elite equipment, professional trainers and advanced recovery zones.';
+
+document.querySelector('.hero-btn')
+.innerHTML =
+'Join PrimeFit';
+
+document.querySelector('.section-title')
+.innerHTML =
+'Membership Plans';
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
 </body>
 </html>
