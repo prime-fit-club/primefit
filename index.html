@@ -619,6 +619,8 @@ price.innerHTML = '$' + newPrice;
 
 /* LANGUAGE SWITCH */
 
+/* LANGUAGE SWITCH */
+
 const language =
 document.querySelector('.language-switch');
 
@@ -626,7 +628,22 @@ language.addEventListener('change',()=>{
 
 const value = language.value;
 
+const navLinks =
+document.querySelectorAll('.nav-links a');
+
+const sectionTitles =
+document.querySelectorAll('.section-title');
+
+const trainerTitle =
+document.querySelector('.membership-toggle h3');
+
 if(value === 'HY'){
+
+navLinks[0].innerHTML='Գլխավոր';
+navLinks[1].innerHTML='Փաթեթներ';
+navLinks[2].innerHTML='Մարզասրահ';
+navLinks[3].innerHTML='ՍՊԱ';
+navLinks[4].innerHTML='Կապ';
 
 document.querySelector('.hero h1')
 .innerHTML =
@@ -640,13 +657,33 @@ document.querySelector('.hero-btn')
 .innerHTML =
 'Միացիր PrimeFit-ին';
 
-document.querySelector('.section-title')
-.innerHTML =
+sectionTitles[0].innerHTML =
 'Անդամակցության Փաթեթներ';
+
+sectionTitles[1].innerHTML =
+'Բացահայտիր Մարզասրահը';
+
+sectionTitles[2].innerHTML =
+'Վերականգնում և Wellness';
+
+sectionTitles[3].innerHTML =
+'Հետևիր PrimeFit-ին';
+
+sectionTitles[4].innerHTML =
+'Կապ մեզ հետ';
+
+trainerTitle.innerHTML =
+'Ընտրիր Փաթեթի Տեսակը';
 
 }
 
 else if(value === 'RU'){
+
+navLinks[0].innerHTML='Главная';
+navLinks[1].innerHTML='Тарифы';
+navLinks[2].innerHTML='Зал';
+navLinks[3].innerHTML='СПА';
+navLinks[4].innerHTML='Контакт';
 
 document.querySelector('.hero h1')
 .innerHTML =
@@ -660,13 +697,33 @@ document.querySelector('.hero-btn')
 .innerHTML =
 'Присоединиться';
 
-document.querySelector('.section-title')
-.innerHTML =
+sectionTitles[0].innerHTML =
 'Тарифные Планы';
+
+sectionTitles[1].innerHTML =
+'Наш Тренажерный Зал';
+
+sectionTitles[2].innerHTML =
+'Восстановление и Wellness';
+
+sectionTitles[3].innerHTML =
+'Следите за PrimeFit';
+
+sectionTitles[4].innerHTML =
+'Связаться с нами';
+
+trainerTitle.innerHTML =
+'Выберите Тип Абонемента';
 
 }
 
 else{
+
+navLinks[0].innerHTML='Home';
+navLinks[1].innerHTML='Plans';
+navLinks[2].innerHTML='Gym';
+navLinks[3].innerHTML='Spa';
+navLinks[4].innerHTML='Contact';
 
 document.querySelector('.hero h1')
 .innerHTML =
@@ -680,14 +737,27 @@ document.querySelector('.hero-btn')
 .innerHTML =
 'Join PrimeFit';
 
-document.querySelector('.section-title')
-.innerHTML =
+sectionTitles[0].innerHTML =
 'Membership Plans';
+
+sectionTitles[1].innerHTML =
+'Explore Our Gym';
+
+sectionTitles[2].innerHTML =
+'Recovery & Wellness';
+
+sectionTitles[3].innerHTML =
+'Follow PrimeFit';
+
+sectionTitles[4].innerHTML =
+'Contact Us';
+
+trainerTitle.innerHTML =
+'Select Membership Type';
 
 }
 
 });
-
 </script>
 
 </body>
