@@ -289,7 +289,69 @@ color:#7ea5d6;
 padding-top:25px;
 border-top:1px solid rgba(255,255,255,.08);
 }
-  
+.select-plan{
+width:100%;
+margin-top:25px;
+padding:16px;
+border:none;
+border-radius:18px;
+background:linear-gradient(90deg,#0077ff,#00c3ff);
+color:white;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 20px rgba(0,153,255,.3);
+}
+
+.select-plan:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(0,153,255,.5);
+}
+
+.membership-card.active{
+border:2px solid #00bfff;
+box-shadow:0 0 40px rgba(0,153,255,.4);
+transform:translateY(-10px);
+} 
+.buy-box{
+margin-top:60px;
+background:#101b2d;
+padding:40px;
+border-radius:30px;
+text-align:center;
+border:1px solid rgba(255,255,255,.08);
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.buy-box h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+#selected-plan{
+font-size:24px;
+color:#35b8ff;
+margin-bottom:25px;
+}
+
+#buyBtn{
+padding:18px 45px;
+border:none;
+border-radius:50px;
+background:linear-gradient(90deg,#0077ff,#00c3ff);
+color:white;
+font-size:20px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+#buyBtn:hover{
+transform:scale(1.05);
+}  
 /* MOBILE */
 
 @media(max-width:900px){
@@ -448,7 +510,20 @@ Select Plan
 </div>
 
 </div>
+<div class="buy-box">
 
+<h2>Your Selection</h2>
+
+<p id="selected-plan">
+No Plan Selected
+</p>
+
+<button id="buyBtn">
+BUY NOW
+</button>
+
+</div>
+  
 </section>
 <!-- GYM GALLERY -->
 
