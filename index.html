@@ -356,26 +356,190 @@ transform:scale(1.05);
 
 @media(max-width:900px){
 
+/* NAVBAR */
+
 .navbar{
+padding:18px 5%;
 flex-direction:column;
-gap:20px;
+gap:18px;
+}
+
+.logo{
+font-size:30px;
+text-align:center;
 }
 
 .nav-links{
+display:flex;
 flex-wrap:wrap;
 justify-content:center;
+gap:18px;
+}
+
+.nav-links a{
+font-size:16px;
+}
+
+.language-switch{
+padding:10px;
+min-width:80px;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+height:auto;
+padding:160px 20px 80px;
+background-position:center;
+}
+
+.hero-content{
+max-width:100%;
 }
 
 .hero h1{
-font-size:48px;
+font-size:42px;
+line-height:1.2;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:17px;
+font-size:16px;
+line-height:1.8;
+padding:0 5px;
+}
+
+.hero-btn{
+width:100%;
+max-width:320px;
+padding:18px;
+font-size:18px;
+}
+
+/* SECTION */
+
+section{
+padding:90px 20px;
 }
 
 .section-title{
-font-size:38px;
+font-size:34px;
+margin-bottom:40px;
+line-height:1.2;
+}
+
+/* MEMBERSHIP */
+
+.membership-toggle h3{
+font-size:22px;
+}
+
+.toggle-buttons{
+flex-direction:column;
+gap:14px;
+}
+
+.toggle-buttons button{
+width:100%;
+padding:16px;
+font-size:17px;
+}
+
+.membership-grid{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+.membership-card{
+padding:30px;
+border-radius:28px;
+}
+
+.membership-card h3{
+font-size:34px;
+}
+
+.price{
+font-size:44px;
+}
+
+.membership-card li{
+font-size:17px;
+margin-bottom:16px;
+}
+
+.select-plan{
+width:100%;
+padding:18px;
+font-size:18px;
+margin-top:25px;
+}
+
+/* BUY BOX */
+
+.buy-box{
+margin-top:40px;
+padding:30px 20px;
+border-radius:25px;
+}
+
+.buy-box h2{
+font-size:30px;
+}
+
+#selected-plan{
+font-size:20px;
+line-height:1.5;
+}
+
+#buyBtn{
+width:100%;
+padding:18px;
+font-size:18px;
+}
+
+/* IMAGES */
+
+.membership-card img{
+height:240px;
+object-fit:cover;
+}
+
+/* CONTACT */
+
+input,
+textarea{
+font-size:16px;
+padding:18px !important;
+}
+
+/* FOOTER */
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:35px;
+text-align:center;
+}
+
+.footer-box h3{
+font-size:24px;
+}
+
+.footer-socials{
+flex-direction:column;
+gap:14px;
+}
+
+.footer-socials a{
+width:100%;
+text-align:center;
+}
+
+/* EXTRA SPACING */
+
+body{
+overflow-x:hidden;
 }
 }
 
